@@ -1,6 +1,7 @@
 ### this is a utility to translate static website programmatically using openai restful api
 
-
+### folder structure
+```
 my-project/
 ├── node_modules/         # Installed npm dependencies
 ├── site/                 # this is the original static website,you can put the source files here, usually contain a index.html file and other static folders
@@ -11,7 +12,7 @@ my-project/
 ├── index.js              # entry to run the translate program
 ├── package.json          # Project metadata and dependencies
 └── README.md             # Project documentation
-
+```
 
 ### .env file
 ```
