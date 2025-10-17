@@ -84,8 +84,8 @@ async function processHtmlFiles(srcDir, destDir, TARGET_LANG, options) {
             const destPath = path.join(destDir, entry.name);
 
             const relativePath = path.relative(srcDir, entry.name);
-            if (translatedFiles.includes(relativePath)) {
-                console.log(`✅ Skipping already translated: ${relativePath}`);
+            if (translatedFiles.includes(destPath)) {
+                console.log(`✅ Skipping already translated: ${destPath}`);
                 continue;
             }
 
@@ -100,7 +100,7 @@ async function processHtmlFiles(srcDir, destDir, TARGET_LANG, options) {
                 console.log(`Saved: ${destPath}`);
 
                 // Update log
-                translatedFiles.push(relativePath);
+                translatedFiles.push(destPath);
                 fs.writeFileSync(logFilePath, JSON.stringify(translatedFiles, null, 2));
             }
         }
